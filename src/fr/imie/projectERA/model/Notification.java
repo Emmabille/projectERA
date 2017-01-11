@@ -1,9 +1,20 @@
 package fr.imie.projectERA.model;
 
-public class Notification {
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
+@Entity
+public class Notification {
+	
+@Id
+@GeneratedValue(strategy=GenerationType.AUTO)
 private int idNotification;
+@Column(nullable=false)
  private String coreMessage;
+@Column(nullable=false)
  private String titleMessage;
  
  public Notification(){

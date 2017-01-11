@@ -3,15 +3,25 @@
  */
 package fr.imie.projectERA.model;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
 /**
  * Storage_entity
  * @author aureliadelaune
  *
  */
+@Entity
 public class Storage {
-
+    @Id
+    @GeneratedValue(strategy=GenerationType.AUTO)
 	private int idStorage;
+    @Column(nullable=false)
 	private String url;
+    @Column(nullable=false)
 	private int size;
 	
 	/**

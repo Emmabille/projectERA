@@ -3,17 +3,33 @@ package fr.imie.projectERA.model;
 import java.util.ArrayList;
 import java.util.Date;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+@Entity
 public class Subject {
+	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int idSubject;
+	@Column(nullable=false)
 	private String title;
+	@Column(nullable=false)
 	private Date deadline;
+	@Column(nullable=false)
 	private int groupSize; 
+	@Column(nullable=false)
 	private String description;
+	@Column(nullable=false)
 	private int idPromo;
+	@Column(nullable=false)
 	private String specialty;
+	@Column(nullable=false)
 	private Date createAt;
-
+	@Column(nullable=false)
 	private ArrayList<Teacher> authors;
+	@Column(nullable=false)
 	private ArrayList<Homework> homework = new ArrayList<Homework>();
 	
 	public Subject(){

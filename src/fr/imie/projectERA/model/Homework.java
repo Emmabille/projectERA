@@ -2,11 +2,22 @@ package fr.imie.projectERA.model;
 
 import java.util.Date;
 
-//HomeWork
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
 public class Homework {
+	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int idTask;
+	@Column(nullable=false)
 	private String title;
+	@Column(nullable=false)
 	private Date deposedAt;
+	@Column(nullable=false)
 	private String document;
 	
 	public Homework(){

@@ -1,10 +1,21 @@
 package fr.imie.projectERA.model;
 
-public class Student extends User{
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
+@Entity
+public class Student extends User{
+	
+    @Id
+    @GeneratedValue(strategy=GenerationType.AUTO)
 	private int idStudent;
 //groupID vraiment necessaire?
+    @Column(nullable=false)
 	private int idGroup;
+    @Column(nullable=false)
 	private int promo;	
 	
 	public Student(){ 

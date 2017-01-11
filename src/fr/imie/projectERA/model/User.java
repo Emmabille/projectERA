@@ -3,18 +3,32 @@
  */
 package fr.imie.projectERA.model;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
 /**
  * User entity
  * 
  * @author aureliadelaune
  *
  */
+@Entity
 public class User {
+	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int idUser;
+	@Column(nullable=false)
 	protected String firstName;
+	@Column(nullable=false)
 	protected String lastName;
+	@Column(nullable=false)
 	protected String userName;
+	@Column(nullable=false)
 	private String password;
+	@Column(nullable=false)
 	private String email;
 	/**
 	 * default constructor for the User entity, no parameter
